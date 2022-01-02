@@ -6,10 +6,8 @@ services:
         image: jakubboucek/lamp-devstack-php:8
         container_name: "${PROJECT_NAME}_php"
         restart: always
-        ports:
-            - 8085:80
         volumes:
-            - ./index.php:/var/www/html/www/index.php
+            - ./src:/var/www/html
         labels:
             # Enable traefik for this container
             - "traefik.enable=true"
