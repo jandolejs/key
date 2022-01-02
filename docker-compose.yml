@@ -14,11 +14,11 @@ services:
             - "traefik.docker.network=${PROJECT_NAME}_php"
 
             # Route HTTP Web
-            - "traefik.http.routers.${PROJECT_NAME}_http.rule=Host(`${PROJECT_BASE_URL}`)"
+            - "traefik.http.routers.${PROJECT_NAME}_http.rule=Host(`${PROJECT_LOCALHOST}`, `${PROJECT_BASE_URL}`)"
             - "traefik.http.routers.${PROJECT_NAME}_http.entrypoints=web"
 
             # Route HTTPS Web
-            - "traefik.http.routers.${PROJECT_NAME}_https.rule=Host(`${PROJECT_BASE_URL}`)"
+            - "traefik.http.routers.${PROJECT_NAME}_https.rule=Host(`${PROJECT_LOCALHOST}`, `${PROJECT_BASE_URL}`)"
             - "traefik.http.routers.${PROJECT_NAME}_https.entrypoints=websecure"
 
             # TLS Certificates
