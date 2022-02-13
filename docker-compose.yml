@@ -8,6 +8,8 @@ services:
         restart: always
         volumes:
             - ./src:/var/www/html
+        networks:
+            - web
         labels:
             # Enable traefik for this container
             - "traefik.enable=true"
@@ -24,3 +26,7 @@ services:
             # TLS Certificates
             - "traefik.http.routers.${PROJECT_NAME}_https.tls=true"
             - "traefik.http.routers.${PROJECT_NAME}_https.tls.certresolver=myresolver"
+
+networks:
+    web:
+        name: key_jandolejs_cz
