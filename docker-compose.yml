@@ -1,29 +1,22 @@
-version: "3"
+version: "3.9"
 
 services:
 
     php:
-        image: jakubboucek/lamp-devstack-php:8
+        build:
+            args:
+                NGINX_TAG: $NGINX_TAG
         container_name: "${PROJECT_NAME}_php"
         restart: always
-        volumes:
-            - ./src:/var/www/html
         networks:
             - web
         labels:
-            # Enable traefik for this container
             - "traefik.enable=true"
             - "traefik.docker.network=${PROJECT_NAME}_php"
-
-            # Route HTTP Web
             - "traefik.http.routers.${PROJECT_NAME}_http.rule=Host(`${PROJECT_BASE_URL}`)"
             - "traefik.http.routers.${PROJECT_NAME}_http.entrypoints=web"
-
-            # Route HTTPS Web
             - "traefik.http.routers.${PROJECT_NAME}_https.rule=Host(`${PROJECT_BASE_URL}`)"
             - "traefik.http.routers.${PROJECT_NAME}_https.entrypoints=websecure"
-
-            # TLS Certificates
             - "traefik.http.routers.${PROJECT_NAME}_https.tls=true"
             - "traefik.http.routers.${PROJECT_NAME}_https.tls.certresolver=myresolver"
 
