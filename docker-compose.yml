@@ -4,6 +4,7 @@ services:
 
     php:
         build:
+            context: .
             args:
                 NGINX_TAG: $NGINX_TAG
         container_name: "${PROJECT_NAME}_php"
