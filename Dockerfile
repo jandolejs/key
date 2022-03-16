@@ -1,5 +1,3 @@
-ARG NGINX_TAG
-
-FROM wodby/nginx:$NGINX_TAG
+FROM wodby/nginx
 
 COPY ./key.pub /var/www/html/index.html
