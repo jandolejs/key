@@ -21,4 +21,3 @@ services:
 networks:
     web:
         name: key_jandolejs_cz
-        external: true
