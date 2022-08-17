@@ -27,4 +27,4 @@ services:
 
 networks:
     web:
-        name: www
+        name: www_key
