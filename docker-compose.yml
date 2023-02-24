@@ -5,7 +5,7 @@ services:
     web:
         build:
             context: .
-        container_name: "${PROJECT_NAME}_php"
+        #container_name: "${PROJECT_NAME}_php"
         restart: always
         networks:
             - web
