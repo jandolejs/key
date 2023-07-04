@@ -5,7 +5,8 @@ services:
     web:
         build:
             context: .
-        #container_name: "${PROJECT_NAME}_php"
+        image: registry.digitalocean.com/mre/key
+        container_name: "${PROJECT_NAME}_web"
         restart: always
         networks:
             - web
