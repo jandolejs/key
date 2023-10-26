@@ -11,18 +11,9 @@ services:
         networks:
             - web
         labels:
-            # Enable traefik
             - "traefik.enable=true"
-
-            # Route HTTP
-            - "traefik.http.routers.${PROJECT_NAME}_http.rule=Host(`${PROJECT_BASE_URL}`)"
-            - "traefik.http.routers.${PROJECT_NAME}_http.entrypoints=web"
-
-            # Route HTTPS
             - "traefik.http.routers.${PROJECT_NAME}_https.rule=Host(`${PROJECT_BASE_URL}`)"
             - "traefik.http.routers.${PROJECT_NAME}_https.entrypoints=websecure"
-
-            # Enable TLS for HTTPS router
             - "traefik.http.routers.${PROJECT_NAME}_https.tls=true"
             - "traefik.http.routers.${PROJECT_NAME}_https.tls.certresolver=myresolver"
 
