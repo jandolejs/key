@@ -14,7 +14,6 @@ services:
             - "traefik.enable=true"
             - "traefik.http.routers.${PROJECT_NAME}_https.rule=Host(`${PROJECT_BASE_URL}`)"
             - "traefik.http.routers.${PROJECT_NAME}_https.entrypoints=websecure"
-            - "traefik.http.routers.${PROJECT_NAME}_https.tls=true"
 
 networks:
     web:
