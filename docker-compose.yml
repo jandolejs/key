@@ -17,5 +17,5 @@ services:
 
 networks:
     web:
-        name: www_key
+        name: www
         external: true
