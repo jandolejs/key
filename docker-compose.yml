@@ -5,7 +5,7 @@ services:
     web:
         build:
             context: .
-        image: registry.digitalocean.com/mre/key
+        #image: registry.digitalocean.com/mre/key
         container_name: "${PROJECT_NAME}_web"
         restart: always
         networks:
