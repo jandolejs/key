@@ -3,9 +3,9 @@ services:
     web:
         build:
             context: .
-        #image: registry.digitalocean.com/mre/key
+        image: ghcr.io/jandolejs/key:latest
         container_name: "${PROJECT_NAME}_web"
-        restart: always
+        restart: unless-stopped
         networks:
             - web
         labels:
