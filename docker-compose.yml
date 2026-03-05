@@ -6,3 +6,5 @@ services:
         image: ghcr.io/jandolejs/key:latest
         container_name: ssh_key_website
         restart: unless-stopped
+        ports:
+            - 8056:80
