@@ -4,16 +4,5 @@ services:
         build:
             context: .
         image: ghcr.io/jandolejs/key:latest
-        container_name: "${PROJECT_NAME}_web"
+        container_name: ssh_key_website
         restart: unless-stopped
-        networks:
-            - web
-        labels:
-            - "traefik.enable=true"
-            - "traefik.http.routers.${PROJECT_NAME}_https.rule=Host(`${PROJECT_BASE_URL}`)"
-            - "traefik.http.routers.${PROJECT_NAME}_https.entrypoints=web,websecure"
-
-networks:
-    web:
-        name: www
-        external: true
