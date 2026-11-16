@@ -1,12 +1,7 @@
 # SSH key
 
-Special repo that just serves my public key on key.jandolejs.cz  
-Both http and https also works for curl `curl -L key.jandolejs.cz`
+Special repo that just serves my public key on key.jandolejs.cz
+(GitHub Pages from `docs/`, the key is `docs/index.html`, proxied through Cloudflare).
+Both http and https work for curl: `curl -L key.jandolejs.cz`
 
-## Deploy
-
-Built and run on the server from the checkout in `/var/www/key` (no Portainer, no registry):
-
-```
-ssh -A root@157.90.172.155 /var/www/key/deploy.sh
-```
+Deploy: push to `master`.
