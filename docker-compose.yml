@@ -1,9 +1,11 @@
+name: key
+
 services:
 
     web:
         build:
             context: .
-        image: ghcr.io/jandolejs/key:latest
+        image: key:server
         container_name: ssh_key_website
         restart: unless-stopped
         ports:
